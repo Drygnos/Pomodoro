@@ -1,8 +1,12 @@
-let seconds = 0;
-let minutes = 10;
+let seconds = 10;
+let minutes = 0;
 let hours = 0;
 let para = document.getElementById("timer");
-let chrono = window.setInterval(addSecond, 1000);
+let button = document.getElementById('buttonLaunchReset');
+printTime();
+button.addEventListener('click', () => {
+    let chrono = window.setInterval(addSecond, 1000);
+})
 function addSecond() {
     if (seconds > 0){
         seconds--;
@@ -15,13 +19,16 @@ function addSecond() {
         seconds = 59;
         }
     else{
-        para.innerHTML = "FINI";
         window.clearTimeout(chrono);
     }
+    printTime();
+}
+
+function printTime(){
     if (hours == 0){
         para.innerHTML = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
     } else{
         para.innerHTML = hours + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
     }
-  }
+}
 
