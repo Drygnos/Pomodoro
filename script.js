@@ -1,6 +1,9 @@
-const secondsSelected = 10;
-const minutesSelected = 0;
-const hoursSelected = 0;
+let secondsSelected = 10;
+let minutesSelected = 0;
+let hoursSelected = 0;
+let pauseSeconds = 0;
+let pauseMinutes = 5;
+let pauseHours = 0;
 let seconds = secondsSelected;
 let minutes = minutesSelected;
 let hours = hoursSelected;
@@ -9,9 +12,24 @@ let working = true;
 let para = document.getElementById("timer");
 let button = document.getElementById('buttonLaunchReset');
 let workingIcon = document.getElementById('working');
+let confirm = document.getElementById('confirmFormular')
 let chrono;
 
 printTime();
+
+confirm.addEventListener('click', () => { //the formular is sent
+    secondsSelected = document.getElementById("workSeconds").value;
+    minutesSelected = document.getElementById("workMinutes").value;
+    hoursSelected = document.getElementById("workHours").value;
+    pauseSeconds = document.getElementById("seconds").value;
+    pauseMinutes = document.getElementById("minutes").value;
+    pauseHours = document.getElementById("hours").value;
+    seconds = secondsSelected;
+    minutes = minutesSelected;
+    hours = hoursSelected;
+    printTime();
+
+});
 
 button.addEventListener('click', () => {
     if (!launched){ //button is in "play" mode
@@ -45,9 +63,6 @@ function addSecond() {
         }
     else{
         window.clearTimeout(chrono);
-        seconds = secondsSelected;
-        minutes = minutesSelected;
-        hours = hoursSelected;
         working = !working;
         if(working){ // end of pause time
             seconds = secondsSelected;
@@ -55,9 +70,9 @@ function addSecond() {
             hours = hoursSelected;
             workingIcon.innerHTML = '<i class="fa-solid fa-person-digging"></i>';
         } else { // end of working time
-            seconds = 0;
-            minutes = 5;
-            hours = 0;
+            seconds = pauseSeconds;
+            minutes = pauseMinutes;
+            hours = pauseHours;
             workingIcon.innerHTML = '<i class="fa-solid fa-bed"></i>';
         }
         chrono = window.setInterval(addSecond, 1000);
