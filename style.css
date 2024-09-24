@@ -1,7 +1,16 @@
-h1 {
-  color: blue;
-  background-color: yellow;
-  border: 1px solid black;
+:root {
+  font-size: 1rem;
+
+  --color-primary: #c7011a;
+  --color-secondary: #c8e8b5;
+  --color-font: #eaf1f2;
+  --color-shadow: #70130e;
+  --footer: #110201;
+}
+
+#settings.a{
+  color: black;
+  
 }
 
 .modal {
@@ -37,8 +46,4 @@ h1 {
   right: 10px;
   color: grey;
   text-decoration: none;
-}
-
-a{
-  color: black;
 }

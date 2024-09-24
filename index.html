@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chronomètre Pomodoro</title>
+    <title>Timer Pomodoro</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/8ae938540f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Pomodoro</h1>
-    <div id='timer'> 25:00 </div>
+    <h1>Timer Pomodoro</h1>
+
+    <div id='working'>
+        <i class="fa-solid fa-person-digging fa-shake"></i> Working 
+    </div><!--<i class="fa-solid fa-bed"></i>-->
+
+    <div class="circle">
+        <div id='timer'> 25:00 </div>
+    </div>
+
     <div class="box">
         <button id="buttonLaunchReset"><i class="fa-solid fa-play"></i></button><!--<i class="fa-solid fa-arrow-rotate-left"></i>-->
     </div>
-    <div id='working'><i class="fa-solid fa-person-digging"></i></div><!--<i class="fa-solid fa-bed"></i>-->
-
 
     <a href="#settings"><i class="fa-solid fa-gear"></i></a>
-
+    
     <!--modal window-->
     <div id="settings" class="modal">
         <div class="modal_content">
-            <h1>Options</h1>
+            <h1>Settings</h1>
 
             <form method="post">
                 <ul>
-                    <p>Choississez un temps de travail : </p>
+                    <p>Define your working time : </p>
                     <li>
-                        <label for="workHours">Heures &nbsp;:</label>
+                        <label for="workHours">Hours &nbsp;:</label>
                         <input type="text" id="workHours" name="nbHours" />
                     </li>
                     <li>
@@ -35,14 +41,14 @@
                         <input type="text" id="workMinutes" name="nbMinutes" />
                     </li>
                     <li>
-                        <label for="workSeconds">Secondes&nbsp;:</label>
+                        <label for="workSeconds">Seconds&nbsp;:</label>
                         <input type="text" id="workSeconds" name="nbSeconds" />
                     </li>
                 </ul>
                 <ul>
-                    <p>Choississez un temps de pause : </p>
+                    <p>Define your rest time : </p>
                     <li>
-                        <label for="hours">Heures &nbsp;:</label>
+                        <label for="hours">Hours &nbsp;:</label>
                         <input type="text" id="hours" name="nbHours" />
                     </li>
                     <li>
@@ -50,18 +56,21 @@
                         <input type="text" id="minutes" name="nbMinutes" />
                     </li>
                     <li>
-                        <label for="seconds">Secondes&nbsp;:</label>
+                        <label for="seconds">Seconds&nbsp;:</label>
                         <input type="text" id="seconds" name="nbSeconds" />
                     </li>
                 </ul>
             </form>
-            <a href="#"><button id="confirmFormular">Confirmer</i></button></a>
+            <a href="#"><button id="confirmFormular">Confirm</i></button></a>
 
             <a href="#" class="modal_close">&times;</a>
         </div>
     </div>
     <!--https://believemy.com/r/creer-une-fenetre-modale-sans-utiliser-javascript-->
 
+    <footer>
+        <p>Javascript exercise<br>Noe BRAULT / Raphaël LE BARBIER</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

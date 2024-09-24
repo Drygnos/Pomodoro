@@ -1,5 +1,5 @@
-let secondsSelected = 10;
-let minutesSelected = 0;
+let secondsSelected = 0;
+let minutesSelected = 25;
 let hoursSelected = 0;
 let pauseSeconds = 0;
 let pauseMinutes = 5;
@@ -39,7 +39,7 @@ button.addEventListener('click', () => {
     } else { //button is in "reset" mode
         window.clearTimeout(chrono);
         button.innerHTML = '<i class="fa-solid fa-play"></i>';
-        workingIcon.innerHTML = '<i class="fa-solid fa-person-digging"></i>';
+        workingIcon.innerHTML = '<i class="fa-solid fa-person-digging fa-shake"></i> Travail';
         seconds = secondsSelected;
         minutes = minutesSelected;
         hours = hoursSelected;
@@ -68,12 +68,12 @@ function addSecond() {
             seconds = secondsSelected;
             minutes = minutesSelected;
             hours = hoursSelected;
-            workingIcon.innerHTML = '<i class="fa-solid fa-person-digging"></i>';
+            workingIcon.innerHTML = '<i class="fa-solid fa-person-digging fa-shake"></i> Travail';
         } else { // end of working time
             seconds = pauseSeconds;
             minutes = pauseMinutes;
             hours = pauseHours;
-            workingIcon.innerHTML = '<i class="fa-solid fa-bed"></i>';
+            workingIcon.innerHTML = '<i class="fa-solid fa-bed fa-bounce"></i> Repos';
         }
         chrono = window.setInterval(addSecond, 1000);
     }
