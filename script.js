@@ -11,7 +11,8 @@ let launched = false;
 let working = true;
 let para = document.getElementById("timer");
 let button = document.getElementById('buttonLaunchReset');
-let workingIcon = document.getElementById('working');
+let workingIcon = document.getElementById('work');
+let restingIcon = document.getElementById('rest');
 let confirm = document.getElementById('confirmFormular')
 let chrono;
 
@@ -67,10 +68,15 @@ function addSecond() {
             seconds = secondsSelected;
             minutes = minutesSelected;
             hours = hoursSelected;
+            workingIcon.innerHTML = '<p style="color:FFFF00">WORK</p>';
+            restingIcon.innerHTML = '<p style="color:000000">Rest</p>';
+            
         } else { // end of working time
             seconds = pauseSeconds;
             minutes = pauseMinutes;
             hours = pauseHours;
+            workingIcon.innerHTML = '<p style="color:FFFFFF">Work</p>';
+            restingIcon.innerHTML = '<p style="color:FFFF00">REST</p>';
         }
         chrono = window.setInterval(addSecond, 1000);
     }
