@@ -10,19 +10,24 @@
 <body>
     <h1>Timer Pomodoro</h1>
 
-    <div id='working'>
-        <i class="fa-solid fa-person-digging fa-shake"></i> Working 
-    </div><!--<i class="fa-solid fa-bed"></i>-->
-
-    <div class="circle">
-        <div id='timer'> 25:00 </div>
+    <div class="container">
+        <p>Work</p>
+        <p>Rest</p>
+    </div>
+    
+    <div class="chrono">
+        <div class="circle">
+            <div id='timer'> 
+                <p>25:00</p>
+            </div>
+        </div>
     </div>
 
     <div class="box">
         <button id="buttonLaunchReset"><i class="fa-solid fa-play"></i></button><!--<i class="fa-solid fa-arrow-rotate-left"></i>-->
+        <a href="#settings"><i class="fa-solid fa-gear"></i></a>
     </div>
 
-    <a href="#settings"><i class="fa-solid fa-gear"></i></a>
     
     <!--modal window-->
     <div id="settings" class="modal">
