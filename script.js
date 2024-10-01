@@ -13,7 +13,7 @@ let para = document.getElementById("timer");
 let button = document.getElementById('buttonLaunchReset');
 let workingIcon = document.getElementById('work');
 let restingIcon = document.getElementById('rest');
-let confirm = document.getElementById('confirmFormular')
+let confirm = document.getElementById('confirmFormular');
 let chrono;
 
 printTime();
@@ -35,11 +35,19 @@ confirm.addEventListener('click', () => { //the formular is sent
 button.addEventListener('click', () => {
     if (!launched){ //button is in "play" mode
         chrono = window.setInterval(addSecond, 1000);
-        button.innerHTML = '<i class="fa-solid fa-arrow-rotate-left"></i>';
+        workingIcon.textContent = 'WORK';
+        workingIcon.style.color = '#FFFF00';
+        restingIcon.textContent = 'Rest';
+        restingIcon.style.color = '#888888';
+        button.innerHTML = '<i class="fa-solid fa-arrow-rotate-left fa-2xl"></i>';
         launched = true;
     } else { //button is in "reset" mode
         window.clearTimeout(chrono);
-        button.innerHTML = '<i class="fa-solid fa-play"></i>';
+        workingIcon.textContent = 'Work';
+        workingIcon.style.color = '#eaf1f2';
+        restingIcon.textContent = 'Rest';
+        restingIcon.style.color = '#eaf1f2';
+        button.innerHTML = '<i class="fa-solid fa-play fa-2xl"></i>';
         seconds = secondsSelected;
         minutes = minutesSelected;
         hours = hoursSelected;
@@ -68,15 +76,19 @@ function addSecond() {
             seconds = secondsSelected;
             minutes = minutesSelected;
             hours = hoursSelected;
-            workingIcon.innerHTML = '<p style="color:FFFF00">WORK</p>';
-            restingIcon.innerHTML = '<p style="color:000000">Rest</p>';
+            workingIcon.textContent = 'WORK';
+            workingIcon.style.color = '#FFFF00';
+            restingIcon.textContent = 'Rest';
+            restingIcon.style.color = '#888888';
             
         } else { // end of working time
             seconds = pauseSeconds;
             minutes = pauseMinutes;
             hours = pauseHours;
-            workingIcon.innerHTML = '<p style="color:FFFFFF">Work</p>';
-            restingIcon.innerHTML = '<p style="color:FFFF00">REST</p>';
+            workingIcon.textContent = 'Work';
+            workingIcon.style.color = '#888888';
+            restingIcon.textContent = 'REST';
+            restingIcon.style.color = '#FFFF00';
         }
         chrono = window.setInterval(addSecond, 1000);
     }

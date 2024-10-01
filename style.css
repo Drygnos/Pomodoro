@@ -14,6 +14,11 @@ html {
   background-color: var(--color-primary);
 }
 
+body {
+  justify-content: center;
+  padding-bottom: 150px;
+}
+
 p,
 h1 {
   color: var(--color-font);
@@ -27,14 +32,22 @@ a{
   color: black;
 }
 
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background: none;
+  margin: 20px;
+}
+
 .container,
 .circle,
 .chrono {
-  margin: 50px auto;
-}
-
-body {
-  justify-content: center;
+  margin: 14px auto;
 }
 
 .container{
@@ -77,10 +90,15 @@ body {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   padding: 30px 10px;
-  margin: 0px 0px;
+  margin: 0;
   background-color: var(--footer);
   color: var(--color-font);
+  z-index: 10;
 }
 
 .modal {
@@ -106,7 +124,7 @@ footer {
   position: relative;
   width: 500px;
   max-width: 90%;
-  background: white;
+  background: var(--color-primary);
   padding: 1.5em 2em;
 }
 
@@ -114,6 +132,12 @@ footer {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: grey;
+  color: var(--color-font);
   text-decoration: none;
+}
+
+.modal_content ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
