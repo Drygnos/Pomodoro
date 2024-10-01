@@ -15,7 +15,7 @@
             <p>Work</p>
         </div>
         <div id = "rest">
-            <p id = "Rest">Rest</p>
+            <p>Rest</p>
         </div>
     </div>
     
@@ -29,7 +29,7 @@
 
     <div class="box">
         <button id="buttonLaunchReset"><i class="fa-solid fa-play fa-2xl"></i></button><!--<i class="fa-solid fa-arrow-rotate-left"></i>-->
-        <button><a href="#settings"><i class="fa-solid fa-gear fa-2xl"></i></a></button>
+        <a href="#settings"><i class="fa-solid fa-gear fa-2xl"></i></a>
     </div>
 
     
@@ -39,8 +39,8 @@
             <h2>Settings</h2>
 
             <form method="post">
-                <ul>
-                    <p>Define your working time : </p>
+                <p>Define your working time : </p>
+                <ul>    
                     <li>
                         <label for="workHours">Hours &nbsp;:</label>
                         <input type="text" id="workHours" name="nbHours" />
@@ -54,8 +54,8 @@
                         <input type="text" id="workSeconds" name="nbSeconds" />
                     </li>
                 </ul>
+                <p>Define your rest time : </p>
                 <ul>
-                    <p>Define your rest time : </p>
                     <li>
                         <label for="hours">Hours &nbsp;:</label>
                         <input type="text" id="hours" name="nbHours" />
@@ -70,7 +70,7 @@
                     </li>
                 </ul>
             </form>
-            <a href="#"><button id="confirmFormular">Confirm</i></button></a>
+            <button id="confirmFormular">Confirm</button>
 
             <a href="#" class="modal_close">&times;</a>
         </div>

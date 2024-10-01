@@ -11,12 +11,16 @@ let launched = false;
 let working = true;
 let para = document.getElementById("timer");
 let button = document.getElementById('buttonLaunchReset');
-let workingIcon = document.getElementById('work');
-let restingIcon = document.getElementById('rest');
+let workingIcon = document.querySelector('#work p');
+let restingIcon = document.querySelector('#rest p');
 let confirm = document.getElementById('confirmFormular');
 let chrono;
 
 printTime();
+
+confirm.addEventListener("click", function() {
+    window.location.href = "#"; // Redirection
+});
 
 confirm.addEventListener('click', () => { //the formular is sent
     secondsSelected = document.getElementById("workSeconds").value;
@@ -36,17 +40,19 @@ button.addEventListener('click', () => {
     if (!launched){ //button is in "play" mode
         chrono = window.setInterval(addSecond, 1000);
         workingIcon.textContent = 'WORK';
-        workingIcon.style.color = '#FFFF00';
         restingIcon.textContent = 'Rest';
-        restingIcon.style.color = '#888888';
+        workingIcon.classList.add('active');
+        restingIcon.classList.remove('active');
+
         button.innerHTML = '<i class="fa-solid fa-arrow-rotate-left fa-2xl"></i>';
         launched = true;
     } else { //button is in "reset" mode
         window.clearTimeout(chrono);
         workingIcon.textContent = 'Work';
-        workingIcon.style.color = '#eaf1f2';
         restingIcon.textContent = 'Rest';
-        restingIcon.style.color = '#eaf1f2';
+        workingIcon.classList.remove('active');
+        restingIcon.classList.remove('active');
+
         button.innerHTML = '<i class="fa-solid fa-play fa-2xl"></i>';
         seconds = secondsSelected;
         minutes = minutesSelected;
@@ -77,18 +83,18 @@ function addSecond() {
             minutes = minutesSelected;
             hours = hoursSelected;
             workingIcon.textContent = 'WORK';
-            workingIcon.style.color = '#FFFF00';
             restingIcon.textContent = 'Rest';
-            restingIcon.style.color = '#888888';
+            workingIcon.classList.add('active');
+            restingIcon.classList.remove('active');
             
         } else { // end of working time
             seconds = pauseSeconds;
             minutes = pauseMinutes;
             hours = pauseHours;
             workingIcon.textContent = 'Work';
-            workingIcon.style.color = '#888888';
             restingIcon.textContent = 'REST';
-            restingIcon.style.color = '#FFFF00';
+            workingIcon.classList.remove('active');
+            restingIcon.classList.add('active');
         }
         chrono = window.setInterval(addSecond, 1000);
     }

@@ -25,7 +25,7 @@ h1 {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 a{
@@ -42,7 +42,10 @@ button {
   border: none;
   background: none;
   margin: 20px;
+  font-size: 1rem;
 }
+
+
 
 .container,
 .circle,
@@ -55,13 +58,35 @@ button {
   justify-content: center;
   text-align: center;
   justify-content: space-around;
-  width: 10%;
+  width: 20%;
+  padding: 0px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0px 0px 15px 10px var(--color-shadow);
+  box-shadow: 0px 0px 15px 10px var(--color-shadow);
   
 }
 
+.container p {
+  opacity: 0.8;
+  font-size: 1.5rem;
+  color: var(--color-font); /* Couleur par défaut */
+}
+
+.container p.active {
+  opacity: 1;
+  color: #FFFF00; /* Jaune pour "actif" */
+}
+
 .chrono {
+  display: flex;
   justify-content: center;
-  display:flex;
+  align-items: center;
+  width: 375px;
+  height: 375px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 15px 10px var(--color-shadow);
+  box-shadow: 0px 0px 15px 10px var(--color-shadow);
 }
 
 .circle {
@@ -69,8 +94,8 @@ button {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   background-color: var(--color-primary);
   border: 15px solid var(--color-secondary);
@@ -79,7 +104,7 @@ button {
 #timer {
   position: relative;
   display: flex;
-  font-size: 8rem;
+  font-size: 6rem;
   color: var(--color-font);
 }
 
@@ -126,6 +151,7 @@ footer {
   max-width: 90%;
   background: var(--color-primary);
   padding: 1.5em 2em;
+  transition: 1s ease-in;
 }
 
 .modal_close {
