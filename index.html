@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timer Pomodoro</title>
+    <title>TIMER POMODORO</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/8ae938540f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <h1>Timer Pomodoro</h1>
-
     <div class="container">
         <div id = "work">
             <p>Work</p>
@@ -37,41 +37,39 @@
     <div id="settings" class="modal">
         <div class="modal_content">
             <h2>Settings</h2>
-
             <form method="post">
                 <p>Define your working time : </p>
                 <ul>    
                     <li>
-                        <label for="workHours">Hours &nbsp;:</label>
-                        <input type="text" id="workHours" name="nbHours" />
+                        <label for="workHours">Hours :</label>
+                        <input type="number" id="workHours" name="nbHours" min="0" max="2"/>
                     </li>
                     <li>
-                        <label for="workMinutes">Minutes &nbsp;:</label>
-                        <input type="text" id="workMinutes" name="nbMinutes" />
+                        <label for="workMinutes">Minutes :</label>
+                        <input type="number" id="workMinutes" name="nbMinutes" min="0" max="60"/>
                     </li>
                     <li>
-                        <label for="workSeconds">Seconds&nbsp;:</label>
-                        <input type="text" id="workSeconds" name="nbSeconds" />
+                        <label for="workSeconds">Seconds :</label>
+                        <input type="number" id="workSeconds" name="nbSeconds" min="0" max="60"/>
                     </li>
                 </ul>
                 <p>Define your rest time : </p>
                 <ul>
                     <li>
-                        <label for="hours">Hours &nbsp;:</label>
-                        <input type="text" id="hours" name="nbHours" />
+                        <label for="restHours">Hours :</label>
+                        <input type="number" id="restHours" name="nbHours" min="0" max="2"/>
                     </li>
                     <li>
-                        <label for="minutes">Minutes &nbsp;:</label>
-                        <input type="text" id="minutes" name="nbMinutes" />
+                        <label for="restMinutes">Minutes :</label>
+                        <input type="number" id="restMinutes" name="nbMinutes" min="0" max="60"/>
                     </li>
                     <li>
-                        <label for="seconds">Seconds&nbsp;:</label>
-                        <input type="text" id="seconds" name="nbSeconds" />
+                        <label for="restSeconds">Seconds :</label>
+                        <input type="number" id="restSeconds" name="nbSeconds" min="0" max="60"/>
                     </li>
                 </ul>
             </form>
             <button id="confirmFormular">Confirm</button>
-
             <a href="#" class="modal_close">&times;</a>
         </div>
     </div>

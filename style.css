@@ -60,7 +60,7 @@ button {
   justify-content: center;
   text-align: center;
   justify-content: space-around;
-  width: 20%;
+  width: 30%;
   padding: 0px;
   border-radius: 20px;
   margin-bottom: 50px;
@@ -84,8 +84,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 375px;
-  height: 375px;
+  width: 425px;
+  height: 425px;
   border-radius: 50%;
   -webkit-box-shadow: 0px 0px 15px 10px var(--color-shadow);
   box-shadow: 0px 0px 15px 10px var(--color-shadow);
@@ -210,8 +210,8 @@ footer {
 
   .chrono {
     margin: 10% auto;
-    width: 60vw;
-    height: 60vw;
+    width: 67.5vw;
+    height: 67.5vw;
   }
 
   #timer {

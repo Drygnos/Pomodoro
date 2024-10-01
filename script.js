@@ -14,21 +14,31 @@ let button = document.getElementById('buttonLaunchReset');
 let workingIcon = document.querySelector('#work p');
 let restingIcon = document.querySelector('#rest p');
 let confirm = document.getElementById('confirmFormular');
+let taf = 0;
 let chrono;
 
 printTime();
 
-confirm.addEventListener("click", function() {
-    window.location.href = "#"; // Redirection
-});
-
 confirm.addEventListener('click', () => { //the formular is sent
+    window.location.href = "#"; // Redirection
     secondsSelected = document.getElementById("workSeconds").value;
     minutesSelected = document.getElementById("workMinutes").value;
     hoursSelected = document.getElementById("workHours").value;
-    pauseSeconds = document.getElementById("seconds").value;
-    pauseMinutes = document.getElementById("minutes").value;
-    pauseHours = document.getElementById("hours").value;
+
+    taf = secondsSelected + (minutesSelected*60) + (hoursSelected*3600)
+    if(taf > 7200){
+        taf = 7200;
+        hoursSelected = 2;
+        minutesSelected = 0;
+        secondsSelected = 0;
+    }
+    /*
+    convertWorkingSeconds(taf);
+    */
+
+    pauseSeconds = document.getElementById("restSeconds").value;
+    pauseMinutes = document.getElementById("restMinutes").value;
+    pauseHours = document.getElementById("restHours").value;
     seconds = secondsSelected;
     minutes = minutesSelected;
     hours = hoursSelected;
@@ -63,6 +73,11 @@ button.addEventListener('click', () => {
     }
 });
 
+function convertWorkingSeconds(totalSeconds) {
+    hoursSelected = Math.floor(totalSeconds / 3600);  // Nombre d'heures
+    minutesSelected = Math.floor((totalSeconds % 3600) / 60);  // Minutes restantes
+    secondsSelected = totalSeconds % 60;  // Secondes restantes
+}
 
 function addSecond() {
     if (seconds > 0){
